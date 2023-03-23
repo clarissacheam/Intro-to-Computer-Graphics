@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Basic ShapesCAM</title>
+  </head>
+	<!--	Create the HTML5 'canvas' element in which we will run WebGL
+	-->
+  <body onload="main()" onresize="drawResize()">
+    <canvas id="webgl" width="600" height="600">
+    Please use a browser that supports "canvas"
+    </canvas>
+	<p>
+	<!-- Make a 'div' element to hold changeable HTML made in our JavaScript file;
+		 (where? look inside main(), inside its 'tick()' function, where we
+		 display the 'current angle' value.
+	-->
+	<div id= ShapeName></div> 
+	<!-- Fill this HTML tag with JavaScript-generated text that names the shape displayed
+	To change shapes, users press the 'Next' button, which calls the 'nextShape()' function-->
+	
+
+		<!--BUTTONS: commands below create HTML push-buttons with labels
+			Spin <<, runStop, and Spin >>.  
+		When users click the button, HTML calls JavaScript functions
+			"spinDown()", "runStop()" and "spinUp()"   -->
+      <button type="button" onclick="spinDown()">Spin << </button>
+	  <button type="button" onclick="runStop()">Run/Stop</button>
+      <button type="button" onclick="spinUp()">Spin >> </button>
+	  <br>For the axis: red = X, green = Y, blue = Z.
+    </p>
+	Open the JavaScript Console, please: 
+	(right-click-->'Inspect Element'-->'Console' tab). 
+<p>
+	To rotate the winged heart, click and drag on the canvas.<br>
+	To aim left/right, press left/right arrow.<br>
+	To aim up/down, press the up/down arrows. <br>
+	To strafe left, press D.<br>
+	To strafe right, press A.<br>
+	To move towards the aim point, press W.<br>
+	To move backwards from the aim point, press S.<br>
+</p>
+	<div id=MouseText> 
+		Mouse Drag totals (CVV x,y coords): 0,0
+	</div>
+	<button type="button" onClick="clearMouse()">Clear</button>
+	<br>
+	Current Quaternion: w + xi + yj + zk where (i,j,k) are 3-way imaginary numbers:
+	<div id=QuatValue>  X=0i, Y=0j, Z=0k, W=1. <br> length=1. </div>
+	<button type="button" onClick="resetQuat()">Reset</button>
+	<!--	Load in the JavaScript libraries supplied by our textbook 
+			(Matsuda et al., 2013 WebGL Programming Guide) that help us
+			with WebGL programming:
+	-->
+    <script src="../lib/webgl-utils.js"></script>
+    <script src="../lib/webgl-debug.js"></script>
+    <script src="../lib/cuon-utils.js"></script>
+    <script src="../lib/cuon-matrix-quat03.js"></script>
+	<!--	Finally, load in our own JavaScript program file.
+	-->
+    <script src="CheamClarissa_ProjB.js"></script>
+  </body>
+</html>
