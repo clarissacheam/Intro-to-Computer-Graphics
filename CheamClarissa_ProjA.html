@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>FUNC02 Robot Arm</title>
+  </head>
+
+  <body onload="main()">
+    <canvas id="webgl" width="400" height="400">
+    Please use a browser that supports "canvas"
+    </canvas>
+
+    <br>
+    Instructions!
+    <br>
+    1. Click and drag to rotate the large blue heart in the lower right corner!
+    <br>
+    2. Press [P] to stop the flying heart from flying around the flower!
+    <br>
+    3. Interact with the buttons to stop different part of the petals from fluttering!
+    <p>
+      <div id='Mouse'>  </div>
+    
+      <span id='MouseAtResult' > </span> <!-- myMouseMove() modifies this span object -->
+		
+		<span id='MouseDragResult'>  </span> <!-- myMouseUp() modifies this span object -->
+    
+    <span id='KeyDownResult'  > </span> <!-- myKeyDown() modifies this span object -->		
+    <br>
+    <input type="button" onclick="runStop()" value="Run/Stop (Twirling flower)">
+      	<input type="button" id="A1button" onclick="A1_runStop()" value="Lower Petal ON">
+	  <input type="button" id="A2button" onclick="A2_runStop()" value="Middle Petal ON">
+    <input type="button" id="A3button" onclick="A3_runStop()" value="Smallest Petal ON">
+  
+	<! these commands create a push-button with labels 'Angle 0', 'Angle 1', etc.
+	When users click the button, call the function name held in 'onclick'>
+    </p>
+    <script src="lib/webgl-utils.js"></script>
+    <script src="lib/webgl-debug.js"></script>
+    <script src="lib/cuon-utils.js"></script>
+    <script src="lib/cuon-matrix-quat03.js"></script>
+    <script src="CheamClarissa_ProjA.js"></script>
+  </body>
+</html>
