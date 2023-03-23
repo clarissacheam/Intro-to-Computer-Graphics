@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Proj C-LATEST</title>
+  </head>
+
+  <body onload="main()" onresize="drawResize()">
+    <canvas id="webgl" width="600" height="600">
+    Please use a browser that supports "canvas"
+    </canvas>
+    <p>
+      VBObox0 = ground plane and axis, VBObox1 = Goroud Shading, and VBObox2 = Phong Shading.
+      To switch between lighting modes, press L/l. Please open the console to confirm if values have been changed! To aim left/right, press left/right arrow.
+      To aim up/down, press the up/down arrows. To strafe left, press D. To strafe right, press A. To move towards the aim point, press W.
+      To move backwards from the aim point, press S.</p>
+
+      <button type="button" onclick="VBO0toggle()">VBO-0 hide/show</button> 
+      <button type="button" onclick="VBO1toggle()">VBO-1 hide/show</button> 
+      <button type="button" onclick="VBO2toggle()">VBO-2 hide/show</button> &emsp; &emsp; &emsp; Lamp AMBI R value: <input id='ambir' size=5>  G value: <input id='ambig' size=5> B value: <input id='ambib' size=5> 
+      <button type="button" onClick='setAmbiCol()'>Submit</button><BR> 
+    </p>
+     Lamp X value: <input id='usrX' size=10>  &emsp;    Lamp Z value: <input id='usrZ' size=10>  &emsp; &emsp; Lamp SPEC R value: <input id='specr' size=5>  G value: <input id='specg' size=5> B value: <input id='specb' size=5> 
+    <button type="button" onClick='setSpecCol()'>Submit</button> &emsp;&emsp;&emsp;
+  </p>
+      Lamp Y value: <input id='usrY' size=10>  &emsp; <button type="button" onClick='setLampLoc()'>Submit</button>&emsp;&emsp;&emsp;<button type="button" onclick="blinnLighting()">Blinn/Phong light</button>&emsp;&emsp; &emsp; Lamp DIFF R value: <input id='diffr' size=5>  G value: <input id='diffg' size=5> B value: <input id='diffb' size=5> 
+      <button type="button" onClick='setDiffCol()'>Submit</button> <button type="button" onclick="onOffLight()">on/off lamp</button> 
+  </p>
+    <script src="lib/webgl-utils.js"></script>
+    <script src="lib/webgl-debug.js"></script>
+    <script src="lib/cuon-utils.js"></script>
+    <script src="lib/cuon-matrix-quat03.js"></script>
+<!-- YOU SHOULD UPGRADE to Brandon Jones' far-faster, 
+      far more complete vector/matrix/quaternion library: (Google it!)
+		<script src="../lib/glmatrix.js"></script>
+-->   <script src="materials_Ayerdi.js"></script>
+		<script src="lights-JT.js"></script>
+	<script src="CC_VBObox-Lib.js"></script>
+    <script src="ProjC_CheamClarissa.js"></script>
+  </body>
+</html>
